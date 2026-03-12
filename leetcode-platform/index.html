@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeetCode Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1>LeetCode Clone</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Problems</a></li>
+                    <li><a href="#">Contests</a></li>
+                    <li><a href="#">Discuss</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container content-wrapper">
+        <section class="problem-section">
+            <div class="problem-header">
+                <h2>Problem Title: Two Sum</h2>
+                <div class="difficulty easy">Easy</div>
+            </div>
+            <div class="problem-description">
+                <h3>Description</h3>
+                <p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return <i>indices of the two numbers such that they add up to <code>target</code></i>.</p>
+                <p>You may assume that each input would have <strong>exactly one solution</strong>, and you may not use the same element twice.</p>
+                <p>You can return the answer in any order.</p>
+
+                <h3>Example 1:</h3>
+                <pre><code>Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].</code></pre>
+
+                <h3>Example 2:</h3>
+                <pre><code>Input: nums = [3,2,4], target = 6
+Output: [1,2]</code></pre>
+
+                <h3>Constraints:</h3>
+                <ul>
+                    <li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+                    <li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+                    <li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
+                    <li><strong>Only one valid answer exists.</strong></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="compiler-section">
+            <div class="compiler-header">
+                <h2>Code Editor</h2>
+                <div class="language-selector">
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="java">Java</option>
+                    </select>
+                </div>
+            </div>
+            <textarea id="code-editor">// Write your code here</textarea>
+            <div class="compiler-actions">
+                <button id="run-button" class="btn btn-run">Run Code</button>
+                <button id="submit-button" class="btn btn-submit">Submit</button>
+            </div>
+            <div class="output-console">
+                <h3>Output:</h3>
+                <pre id="output"></pre>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/clike/clike.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

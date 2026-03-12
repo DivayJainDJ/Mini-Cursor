@@ -1,0 +1,293 @@
+:root {
+    --bg-color: #282c34;
+    --text-color: #abb2bf;
+    --primary-color: #61afef;
+    --secondary-color: #c678dd;
+    --accent-color: #98c379;
+    --border-color: #3e4451;
+    --header-bg: #21252b;
+    --problem-bg: #21252b;
+    --compiler-bg: #21252b;
+    --button-run-bg: #61afef;
+    --button-run-hover-bg: #528ecc;
+    --button-submit-bg: #98c379;
+    --button-submit-hover-bg: #7fb261;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar {
+    background-color: var(--header-bg);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h1 {
+    margin: 0;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: var(--primary-color);
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    min-height: calc(100vh - 100px); /* Adjust based on header/footer height */
+}
+
+.problem-section,
+.compiler-section {
+    background-color: var(--problem-bg);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1;
+}
+
+.problem-section {
+    flex: 1.2;
+}
+
+.compiler-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.problem-header,
+.compiler-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.problem-header h2,
+.compiler-header h2 {
+    margin: 0;
+    color: var(--secondary-color);
+}
+
+.difficulty {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.difficulty.easy {
+    background-color: #2e4a30;
+    color: #98c379;
+}
+
+.problem-description h3 {
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.problem-description p,
+.problem-description ul,
+.problem-description pre {
+    margin-bottom: 15px;
+}
+
+.problem-description code {
+    background-color: rgba(153, 204, 255, 0.15);
+    color: var(--primary-color);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.problem-description pre {
+    background-color: #1e2227;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+}
+
+.problem-description pre code {
+    display: block;
+    background: none;
+    color: var(--text-color);
+    padding: 0;
+}
+
+.language-selector label {
+    margin-right: 10px;
+    color: var(--text-color);
+}
+
+.language-selector select {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23abb2bf%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095.1a17.6%2017.6%200%200%200%205.4-12.9c0-5-1.8-9.3-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E);
+    background-repeat: no-repeat;
+    background-position: right 12px top 50%;
+    background-size: 0.6em auto;
+    padding-right: 30px;
+}
+
+.language-selector select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.CodeMirror {
+    flex-grow: 1;
+    height: 400px; /* Or a flexible height */
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.cm-s-dracula.CodeMirror {
+    background-color: #282c34; /* Match overall theme */
+    color: var(--text-color);
+}
+
+.compiler-actions {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn-run {
+    background-color: var(--button-run-bg);
+    color: #fff;
+}
+
+.btn-run:hover {
+    background-color: var(--button-run-hover-bg);
+}
+
+.btn-submit {
+    background-color: var(--button-submit-bg);
+    color: #fff;
+}
+
+.btn-submit:hover {
+    background-color: var(--button-submit-hover-bg);
+}
+
+.output-console {
+    margin-top: 20px;
+    background-color: #1e2227;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.output-console h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.output-console pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    color: #f8f8f2;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .problem-section,
+    .compiler-section {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar ul {
+        margin-top: 10px;
+    }
+
+    .navbar ul li {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .problem-header,
+    .compiler-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
